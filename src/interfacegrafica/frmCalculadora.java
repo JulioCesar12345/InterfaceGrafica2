@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author julio.gabardo
  */
-public class frm_Principal extends javax.swing.JFrame {
+public class frmCalculadora extends javax.swing.JFrame {
 
     /**
      * Creates new form frm_Principal
      */
-    public frm_Principal() {
+    public frmCalculadora() {
         initComponents();
     }
 
@@ -43,7 +43,7 @@ public class frm_Principal extends javax.swing.JFrame {
         rbMultiplicar = new javax.swing.JRadioButton();
         rbDividir = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Senac");
         setPreferredSize(new java.awt.Dimension(400, 400));
         setResizable(false);
@@ -151,6 +151,7 @@ public class frm_Principal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNum1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNum1ActionPerformed
@@ -159,8 +160,8 @@ public class frm_Principal extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-        String a = txtNum1.getText();
-        String b = txtNum2.getText();//metodo get pega valor do campo txt
+        String a = txtNum1.getText();//ir na aba janela para abilitar a aba do navegador e as propriedades.
+        String b = txtNum2.getText();//metodo get pega valor do campo txt/precisa variavel para armazenar e depois converter.
 
         int n1 = Integer.parseInt(a);
         int n2 = Integer.parseInt(b);//converte texto dp txtfield para int
@@ -213,20 +214,21 @@ public class frm_Principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frm_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frm_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frm_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frm_Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmCalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frm_Principal().setVisible(true);
+                new frmCalculadora().setVisible(true);
             }
         });
     }
