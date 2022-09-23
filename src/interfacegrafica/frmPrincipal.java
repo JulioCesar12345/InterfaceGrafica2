@@ -70,6 +70,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Arquivo");
 
         menuCadastrar.setText("Cadastrar");
+        menuCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastrarActionPerformed(evt);
+            }
+        });
         jMenu1.add(menuCadastrar);
 
         menuSair.setText("Sair");
@@ -147,6 +152,12 @@ public class frmPrincipal extends javax.swing.JFrame {
         //System.exit(0) sai do sistema
         System.exit(0);
     }//GEN-LAST:event_menuSairActionPerformed
+
+    private void menuCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarActionPerformed
+        // TODO add your handling code here:
+        frm_Agenda agenda = new frm_Agenda();
+        agenda.setVisible(true);
+    }//GEN-LAST:event_menuCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
