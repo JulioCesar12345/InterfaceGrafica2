@@ -68,6 +68,11 @@ public class frm_Agenda extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbListaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbLista);
 
         btnExcluir.setText("Excluir");
@@ -78,6 +83,11 @@ public class frm_Agenda extends javax.swing.JFrame {
         });
 
         btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
+            }
+        });
 
         btnInserir.setText("Inserir");
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
@@ -163,6 +173,22 @@ public class frm_Agenda extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione um registro para excluir!!");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+        // TODO add your handling code here:
+        if (tbLista.getSelectedRow() !=-1){
+            tbLista.setValueAt(txtNome.getText(),tbLista.getSelectedRow(),0);//envia alteração apos clicar em atualizar
+            tbLista.setValueAt(txtTelefone.getText(),tbLista.getSelectedRow(),1);
+        }
+    }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void tbListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbListaMouseClicked
+        // TODO add your handling code here:
+        if (tbLista.getSelectedRow() !=-1){//Evento da tabela para selecionar linha
+           txtNome.setText(tbLista.getValueAt(tbLista.getSelectedRow(), 0).toString());//seleciona linha do nome na tabela e converte para string pois textfield é String
+           txtTelefone.setText(tbLista.getValueAt(tbLista.getSelectedRow(), 1).toString());//seleciona linha do telefone na tabela e converte para string pois textfield é String
+        }
+    }//GEN-LAST:event_tbListaMouseClicked
 
     /**
      * @param args the command line arguments
