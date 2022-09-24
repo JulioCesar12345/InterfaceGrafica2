@@ -43,6 +43,7 @@ public class frm_Agenda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agenda");
+        setIconImage(new javax.swing.ImageIcon("C:\\Users\\julio.gabardo\\Downloads\\insert.png").getImage());
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 3, 24)); // NOI18N
@@ -89,6 +90,7 @@ public class frm_Agenda extends javax.swing.JFrame {
             }
         });
 
+        btnInserir.setIcon(new javax.swing.ImageIcon("C:\\Users\\julio.gabardo\\Downloads\\insert.png")); // NOI18N
         btnInserir.setText("Inserir");
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +109,7 @@ public class frm_Agenda extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnInserir)
@@ -129,7 +131,7 @@ public class frm_Agenda extends javax.swing.JFrame {
                                 .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)))
                         .addComponent(jLabel1)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +163,9 @@ public class frm_Agenda extends javax.swing.JFrame {
         DefaultTableModel dtmAgenda = (DefaultTableModel) tbLista.getModel();
         Object[] dados = {txtNome.getText(),txtTelefone.getText()};
         dtmAgenda.addRow(dados);
-        
+        txtNome.setText("");//apaga campo apos inserir
+        txtTelefone.setText("");
+        txtNome.requestFocus();//cursor voulta piscar no campo texto
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
