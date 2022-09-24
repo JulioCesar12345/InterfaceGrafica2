@@ -187,7 +187,7 @@ public class frm_Agenda extends javax.swing.JFrame {
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
         if (tbLista.getSelectedRow() !=-1) {//Registo da tabela começa em 0,diferente de -1 permite excluir
-          DefaultTableModel dtmAgenda = (DefaultTableModel) tbLista.getModel();
+          DefaultTableModel dtmAgenda = (DefaultTableModel) tbLista.getModel();//no tbLista é a caixa de conbinação pegando o model a "opção"
           dtmAgenda.removeRow(tbLista.getSelectedRow());//getSelectedRow pega a linha da tabela na tbLista
         }else{
             JOptionPane.showMessageDialog(null, "Selecione um registro para excluir!!");
@@ -199,7 +199,7 @@ public class frm_Agenda extends javax.swing.JFrame {
         if (tbLista.getSelectedRow() !=-1){
             tbLista.setValueAt(txtNome.getText(),tbLista.getSelectedRow(),0);//envia alteração apos clicar em atualizar
             tbLista.setValueAt(txtTelefone.getText(),tbLista.getSelectedRow(),1);
-            tbLista.setValueAt(cbSexo.getSelectedItem(),tbLista.getSelectedRow(),2);
+            tbLista.setValueAt(cbSexo.getSelectedItem(),tbLista.getSelectedRow(),2);// caixa conbinação
         }
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
